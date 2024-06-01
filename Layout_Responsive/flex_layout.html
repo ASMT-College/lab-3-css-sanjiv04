@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page layout using flexbox</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav,
+    footer {
+        border: 1px solid gray;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+
+
+    #main_container {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+
+    #body_container {
+        width: 70%;
+        height: 100%;
+        border: 1px dotted red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sidebar {
+        width: 30%;
+        border: 1px dotted red;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+
+
+    @media screen and (max-width: 700px){
+        #main_container{
+            flex-direction: column;
+        }
+
+        #body_container, #sidebar{
+            width: 100%;
+        }
+    }
+
+
+</style>
+
+<body>
+
+    <nav>
+        <header>
+            <h2>Header</h2>
+        </header>
+    </nav>
+
+    <div id="main_container">
+        <div id="body_container">
+            <h2>Body</h2>
+        </div>
+        <aside id="sidebar">
+            <h2>Sidebar</h2>
+        </aside>
+    </div>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+
+
+</body>
+
+</html>
